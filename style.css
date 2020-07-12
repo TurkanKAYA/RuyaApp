@@ -1,0 +1,17 @@
+/* Empty. Add your own CSS if you like */
+.animasyon{
+	width: 125%;
+	margin-left: -47px;
+
+}
+.ortala{
+	text-align:center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.boyut{
+	font-size:30px;
+}
+.yuvarla{
+	border-radius: 27px !important;
+}
