@@ -1,0 +1,51 @@
+<ion-view view-title="Playlist">
+  <ion-content>
+   
+
+<div class="card">
+  <div class="item item-text-wrap">
+    {{kullanici}}, bu rüyayı daha önce {{bilgi.goren.length}} kişi gördü.
+  </div>
+</div>
+
+
+
+    <div class="list card">
+
+ <h1 style="text-align: center;">yıldız teknik üniversitesi</h1>
+
+  <div class="item item-body">
+    
+    <p>
+     {{bilgi.aciklama}}
+    </p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+  </div>
+
+</div>
+
+
+<!--Rüyayı görenler-->
+
+
+<div class="list" ng-if="bilgi.goren.length>0">
+
+  <div class="item item-divider">
+    Bu rüyayı görenler
+  </div>
+
+  <a class="item" ng-repeat="gordu in bilgi.goren">
+    {{gordu.adi}}
+     <span class="badge badge-assertive">{{gordu.tarih}}</span>
+  </a>
+
+
+
+</div>
+
+  </ion-content>
+</ion-view>
+
