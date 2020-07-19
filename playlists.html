@@ -1,0 +1,71 @@
+ n <ion-view view-title="Ruyadayim">
+  <ion-content class="animated jello">
+
+<div ng-if="!kullanici">
+
+<div class="ortala">
+<h4><span class="boyut">Merhaba <br>ismini öğrenebilir miyiz?</h4>
+</div>
+
+
+
+
+<div class="list list-inset" >
+  <label class="item item-input">
+    <input type="text" placeholder="ismin nedir?" ng-model="isim">
+  </label>
+
+  <button ng-disabled="isim.length<3 || !isim" class="button button-block button-positive" ng-click="isimAl(isim)">
+  Başla
+</button>
+
+
+</div>
+
+</div>
+
+
+<div ng-if="kullanici">
+
+<div class="ortala">
+<h4><span class="buyut">Merhaba {{kullanici}},</span> <p>rüyanda ne gördün merak ediyoruz?</p></h4>
+</div>
+
+
+<!--Ruya Arama alanı-->
+ <div class="list list-inset">
+  <label class="item item-input yuvarla">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search" ng-model="ara" ng-change="ruyaBul(ara)">
+  </label>
+</div>
+
+<!--
+<div class="ortala">
+<h5 ng-if="ara && sonuc.length>0">"{{ara}}" kelimesine ait <b>{{sonuc.length}} sonuç</b> bulundu</h5>
+</div>
+
+
+<div class="ortala">
+<h5 ng-if="ara && sonuc.length==0">Hiç sonuç bulunamadı</h5>
+</div>
+-->
+
+
+<!--Animasyon-->
+<img ng-if="!ara" class="animasyon" src="https://cdn.dribbble.com/users/2347728/screenshots/6553196/dribbble_shot.gif">
+
+
+    <ion-list >
+    <ion-item ng-repeat="ruya in ruyalar | filter:ara as sonuc" href="#/app/playlists/{{$index}}">
+        {{ruya.adi}} / {{$index}}
+      </ion-item>
+                                      
+
+
+    </ion-list>
+
+</div>
+
+  </ion-content>
+</ion-view>
